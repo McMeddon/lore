@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minecraft Lore Timeline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .cinzel { font-family: 'Cinzel', serif; }
+
+    /* --- ✨ Animation & Tab Styles --- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .era-group {
+      animation: fadeIn 0.6s ease-out forwards;
+      opacity: 0; /* Start hidden */
+    }
+
+    .tab.active {
+      background-color: rgba(64, 64, 64, 0.8); /* a slightly more prominent bg for active tab */
+      /* color: #38bdf8; /* sky-400 */ */
+    }
+    #tabs-nav {
+  position: relative;
+  /* Remove border-l-2 and border-dotted from the class list in HTML */
+  border: none;
+}
+
+#tabs-nav::before {
+  content: "";
+  position: absolute;
+  left: 1.1rem; /* Adjust to align with marker */
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 2px dotted #525252; /* neutral-700 */
+  z-index: 0;
+}
+
+.tab .inline-block.rounded-full {
+  position: relative;
+  z-index: 1;
+  left: -0.2rem; /* Slightly overlap the line */
+}
+
+  </style>
+</head>
+<body class="bg-neutral-900 text-gray-100 min-h-screen px-10">
+    <span class="sticky absolute top-10 height-0 -left-10 inline-block bg-red-500 text-white text-xs font-semibold rounded-md px-10 py-2 -mt-10 -ml-28 -rotate-45 z-20">Work in progress</span>
+
+    <div class="relative w-full h-[53vh] mb-8 overflow-hidden">
+        <img src="https://mcmeddon.com/_astro/fetoxion_3.67LLaq7X_1ghjG1.webp" alt="Minecraft Hero Image"
+             class="absolute object-top top-0 left-0 w-full h-full object-cover brightness-50 rounded-2xl position-bottom" />
+        <img src="./Book_and_Quill_Writing.png"
+             alt="Minecraft Hero Image"
+             class="absolute object-top top-10 left-0 w-full h-full object-cover brightness-50 rounded-2xl position-bottom" />
+        <h1 class="relative z-10 text-center text-white cinzel text-4xl xl:text-5xl font-bold pt-[25vh] drop-shadow-lg">
+          McMeddons Expanded <br>Minecraft Worlds Lore <br> Timeline
+        </h1>
+    </div>
+
+    <div class="max-w-6xl mx-auto mb-8 ">
+      <div class="m-4 justify-between flex items-center">
+        <p class="text-gray-300 text-base">
+          Welcome to the McMeddon Minecraft Lore Timeline!<br>
+          <br>
+         <!--  <span class="inline-block mt-2"><span class="inline-block w-3 h-3 rounded-full align-middle mr-1" style="background:#4caf50"></span>Green means the vanilla game lore,</span>
+          <br>
+          <span class="inline-block"><span class="inline-block w-3 h-3 rounded-full align-middle mr-1" style="background:#2196f3"></span>Blue indicates expanded lore within McMeddons Worlds.</span>
+          <br>
+          <span class="inline-block"><span class="inline-block w-3 h-3 rounded-full align-middle mr-1" style="background:#fff"></span>White is missing or unset.</span>
+         -->
+        
+        
+        </p>
+
+         <!-- Join discord button -->
+            <div>
+              <a href="https://discord.gg/mcmeddon" target="_blank" class="inline-block bg-indigo-600/50 border-2 border-indigo-400/50 hover:bg-purple-900/20 hover:-translate-y-2  text-white px-4 py-2 rounded-xl transition-all duration-200">
+                  Join the McMeddon Discord
+              </a>
+              <!-- Join PlanetMinecraft button -->
+              <a href="https://www.planetminecraft.com/member/mcmeddon/" target="_blank" class="inline-block bg-green-400/50 border-2 border-green-400/50 hover:bg-green-900/20 hover:-translate-y-2 text-white px-4 py-2 rounded-xl transition-all duration-200 ">
+                  PlanetMinecraft</a>
+              <!-- Join Patreon button -->
+              <a href="https://www.patreon.com/mcmeddon" target="_blank" class="inline-block bg-red-400/50 border-2 border-red-400/50 hover:bg-red-600/20 hover:-translate-y-2 text-white px-4 py-2 rounded-xl transition-all duration-200 ">
+                   Patreon</a>
+
+
+            </div>
+    </div>
+
+    <!-- Add a big info bar here -->
+    <div class="max-w-6xl mx-auto mb-8 p-4 bg-yellow-600/10 border-2 border-yellow-200/20 rounded-lg">
+      NOTE :
+        <p class=" text-base ">
+          <p class="font-bold text-xl">
+            This is NOT the official Minecraft lore, <br>
+          </p>
+          but rather a fan-made interpretet and compiled compilation of lore elements, and expanded on
+           for the Worlds of McMedddon.
+          This timeline is a work in progress and may contain inaccuracies or incomplete information.<br>
+          
+        </p>
+    </div>
+
+    <!-- Join Patreon button -->
+              <a href="#"  class=" float-right bg-sky-400/50 border-2 border-sky-400/50 hover:bg-sky-600/20 hover:-translate-y-2 text-white px-4 py-2 rounded-xl transition-all duration-200 ">
+                   Submit Ideas/Suggestions *coming soon</a>
+
+<div class="max-w-6xl mx-auto mb-4">
+  <button id="toggleOrderBtn" class="bg-neutral-600/50 hover:bg-sky-800/50 text-white px-4 py-2 rounded font-semibold transition">(☞ﾟヮﾟ)☞</button>
+</div>
+
+
+    <div id="timeline-container" class="max-w-6xl mx-auto flex flex-col sm:flex-row gap-x-8">
+      
+    <div id="tabs-nav" class="w-full w-1/2 md:w-2/5 border-b-2 md:border-b-0 md:border-l-2 border-dotted px-2 border-neutral-700 pr-0 md:pr-6 pb-6 md:pb-0 mb-6 md:mb-0">
+        </div>
+      
+      <div id="tab-content" class="w-full w-1/2 md:w-3/5 md:mt-4 sticky top-40 self-start">
+        <div class="p-4 rounded-lg bg-neutral-800/50">
+            <h3 class="cinzel text-xl text-sky-400 mb-2 font-semibold">Welcome!</h3>
+            <p class="text-gray-400">Select an entry from the left to see its description here.</p>
+        </div>
+      </div>
+
+    </div>
+    
+
+    <script>
+    const loreEras = [
+  {
+    "era": "Creation",
+    "entries": [
+      {
+        "title": "Creation of the Realms",
+        "description": "The Hosts or Titans create the Overworld, Nether, and End—divine or god-like forces of cosmic origin.",
+        "status": "legends",
+        "source": "Minecraft Legends",
+        "type": "event",
+        loreType: "legends"
+      },
+      {
+        "title": "Birth of Life",
+        "description": "The first life forms emerge in the Overworld, including flora and fauna. Through the power of the Hosts/Titans.",
+        "status": "suggested",
+        "source": "Minecraft Fanon",
+        "type": "event"
+      }
+    ]
+  },
+  {
+    "era": "Primordial Age",
+    "entries": [
+      {
+        "title": "Early Ecosystems",
+        "description": "Life diversifies across the Overworld; simple fauna and flora take root.",
+        "status": "",
+        "source": "Fan Theorie",
+        "type": "event",
+        loreType: "vanilla"
+        
+      },
+      {
+        "title": "Rise of Ancient Factions",
+        "description": "Proto-civilizations such as the Endborn and Deepcallers emerge with unique ideologies and access to raw magic.",
+        "status": "",
+        "source": "Fan Theorie",
+        "type": "faction",
+        loreType: "vanilla"
+      },
+      {
+        "title": "The Endborn Discover the End",
+        "description": "The Endborn construct strongholds to flee the Overworld and colonize the End dimension.",
+        "status": "",
+        "source": "Fan Theories",
+        "type": "event",
+        loreType: ""
+      }
+    ]
+  },
+  {
+    "era": "First Age - Age of Builders",
+    "entries": [
+      {
+        "title": "Golden Age of Architecture",
+        "description": "The Ancient Builders construct temples, monuments, underwater ruins, and mineshafts across dimensions.",
+        "status": "Java",
+        "source": "Vanilla",
+        "type": "event",
+        loreType: "vanilla"
+      },
+      {
+        "title": "Experimentation in the Nether",
+        "description": "Builders use pigs as livestock in the Nether and accidentally create Piglins through mutation or soul exposure.",
+        "status": "Java",
+        "source": "Fan Theories",
+        "type": "event",
+        loreType: "vanilla"
+      },
+      {
+        "title": "Construction of Portals",
+        "description": "Portals stabilize interdimensional travel, allowing Builders to traverse and settle multiple realms.",
+        "status": "Java",
+        "source": "Vanilla",
+        "type": "event",
+        loreType: "vanilla"
+      },
+    ]
+  },
+  {
+    "era": "Second Age - Age of Wisdom and Power",
+    "entries": [
+
+      {
+        "title": "Rise of Magic and Redstone",
+        "description": "Redstone technology, enchantments, and alchemy are refined and widely used in Builder society.",
+        "status": "Java",
+        "source": "Fan Theories",
+        "type": "event",
+        loreType: "vanilla"
+      },
+      {
+        "title": "The Orb of Dominance",
+        "description": "A mysterious and powerful artifact used to control minds and energy. Eventually corrupted its users.",
+        "status": "dungeons",
+        "source": "Minecraft Dungeons",
+        "type": "artifact",
+        loreType: "dungeons"
+      },
+      {
+        "title": "Civil War & Creeper Invention",
+        "description": "Conflict among Builder factions leads to the invention or mutation of the Creeper as a biological weapon.",
+        "status": "suggested",
+        "source": "Fan Theorie",
+        "type": "event",
+        loreType: ""
+      }
+    ]
+  },
+  {
+    "era": "Third Age - Age of Hubris and Cataclysm",
+    "entries": [
+     
+      {
+        "title": "Forbidden Knowledge: The Deep Dark",
+        "description": "Builders awaken the sculk and the Warden after tampering with forbidden knowledge buried in the Deep Dark.",
+        "status": "Java",
+        "source": "Vanilla, Fan Theories",
+        "type": "event",
+        loreType: "vanilla"
+      },
+      {
+        "title": "The Corruption of the Land",
+        "description": "The Orb of Dominance spreads corruption through mobs and biomes, destabilizing nature.",
+        "status": "dungeons",
+        "source": "Minecraft Dungeons",
+        "type": "event",
+        loreType: "vanilla"
+      },
+      {
+        "title": "Redstone Monstrosities",
+        "description": "Machines created for war turn rogue or are abandoned in ancient battlefields.",
+        "status": "dungeons",
+        "source": "Minecraft Dungeons",
+        "type": "artifact",
+        loreType: "vanilla"
+      },
+      {
+        "title": "Ecological Collapse",
+        "description": "Natural disasters erupt—volcanic activity in the Nether, ocean flooding in the Overworld, mass extinction.",
+        "status": "suggested",
+        "source": "Fan Theories",
+        "type": "event",
+        loreType: ""
+      },
+      {
+        "title": "Nether Conflicts and Piglin War",
+        "description": "Builders and Piglins fight over Netherite and gold, resulting in the fall of Bastions and empires.",
+        "status": "legends",
+        "source": "Minecraft Legends",
+        "type": "faction",
+        loreType: "legends"
+      },
+      {
+        "title": "Rise of Illagers",
+        "description": "Builder society fractures into Villagers and Illagers. Witches emerge as rogue scientists or magic users.",
+        "status": "dungeons",
+        "source": "Vanilla, Minecraft Dungeons",
+        "type": "faction",
+        loreType: "vanilla"
+      }, {
+        "title": "The Wither Cataclysm",
+        "description": "Soul Sand rituals summon the Wither, unleashing undeath and devastation across the Overworld.",
+        "status": "Java",
+        "source": "Vanilla, Fan Theories",
+        "type": "event",
+        loreType: "vanilla"
+      },
+      {
+        "title": "The Warden Cataclysm",
+        "description": "The Warden emerges..",
+        "status": "Java",
+        "source": "Vanilla, Fan Theories",
+        "type": "event",
+        loreType: "vanilla"
+      },
+      {
+        "title": "Flight to the End",
+        "description": " Remnant of the Builders escapes to the End and mutates into Endermen over generations.",
+        "status": "Java",
+        "source": "Fan Theories",
+        "type": "event",
+        loreType: "vanilla"
+      }
+    ]
+  },
+  {
+    "era": "The New Age Era",
+    "entries": [
+      {
+        "title": "Arrival of the Player",
+        "description": "Steve and Alex appear, possibly reincarnations or descendants of the Ancient Builders.",
+        "status": "Java",
+        "source": "Vanilla",
+        "type": "event",
+        loreType: ""
+      },
+      {
+        "title": "Rediscovery and Redemption",
+        "description": "Players explore ruins, unlock ancient technology, and defeat the Ender Dragon.",
+        "status": "Java",
+        "source": "Vanilla",
+        "type": "event",
+        loreType: "vanilla"
+      },
+      {
+        "title": "The End Poem",
+        "description": "Ascended entities reflect on the Players journey, suggesting cyclical universes and purpose.",
+        "status": "Java",
+        "source": "Vanilla",
+        "type": "lore",
+        loreType: "vanilla"
+      },
+      {
+        "title": "Legacy Unearthed",
+        "description": "Players revive ancient creatures like the Sniffer and reveal deeper pasts through archaeology.",
+        "status": "Java",
+        "source": "Vanilla Updates",
+        "type": "event",
+        loreType: "vanilla"
+      },
+    ]
+  }
+]
+;
+
+
+    const tabsNav = document.getElementById('tabs-nav');
+    const tabContent = document.getElementById('tab-content');
+    const toggleOrderBtn = document.getElementById('toggleOrderBtn');
+    let activeTabElement = null;
+    let isReversed = false;
+
+    /**
+     * Displays the content for a given lore entry.
+     * @param {object} entry - The lore entry object.
+     */
+function displayContent(entry) {
+    tabContent.innerHTML = '';
+    const contentWrapper = document.createElement('div');
+    contentWrapper.className = 'p-4 rounded-lg bg-neutral-800/50';
+
+    if (entry.image) {
+        const imgElement = document.createElement('img');
+        imgElement.src = entry.image;
+        imgElement.alt = entry.title;
+        imgElement.className = 'w-full h-auto rounded-lg mb-4';
+        contentWrapper.appendChild(imgElement);
+    }
+
+    const title = document.createElement('h3');
+    title.className = "cinzel text-xl text-sky-400 mb-2 font-semibold";
+    title.textContent = entry.title;
+    contentWrapper.appendChild(title);
+
+    const description = document.createElement('p');
+    description.className = "text-gray-300 mb-2";
+    if (entry.description) {
+        description.textContent = entry.description;
+    } else {
+        description.textContent = "This is a categorical entry. Select one of its sub-entries to view details.";
+        description.className += " text-gray-500 italic";
+    }
+    contentWrapper.appendChild(description);
+
+    // --- Source, Type & Status Tags ---
+    const tagsWrapper = document.createElement('div');
+    tagsWrapper.className = 'flex gap-2 mt-2';
+
+    if (entry.source) {
+        const sourceTag = document.createElement('span');
+        sourceTag.textContent = entry.source;
+        sourceTag.className = 'px-2 py-0.5 rounded text-xs font-semibold bg-sky-700/40 text-sky-100';
+        tagsWrapper.appendChild(sourceTag);
+    }
+
+    if (entry.type) {
+        const typeTag = document.createElement('span');
+        typeTag.textContent = entry.type.toUpperCase();
+        typeTag.className = 'px-2 py-0.5 rounded text-xs font-semibold bg-neutral-700/40 text-neutral-100';
+        tagsWrapper.appendChild(typeTag);
+    }
+
+    if (entry.status) {
+        const statusColors = {
+          
+            default: 'bg-neutral-600/50 text-white'
+        };
+        const statusTag = document.createElement('span');
+        statusTag.textContent = entry.status.toUpperCase();
+        statusTag.className = `px-2 py-0.5 rounded text-xs font-bold ${statusColors[entry.status] || statusColors.default}`;
+        tagsWrapper.appendChild(statusTag);
+    }
+
+    contentWrapper.appendChild(tagsWrapper);
+    tabContent.appendChild(contentWrapper);
+}
+
+    /**
+     * Creates a clickable tab element for a lore entry.
+     * @param {object} entry - The lore entry object.
+     * @param {number} level - The indentation level.
+     */
+      function createTab(entry, level) {
+    const tab = document.createElement('div');
+    tab.className = 'tab cursor-pointer p-2 rounded-md hover:bg-neutral-700/80 transition-colors duration-200 flex items-center justify-between';
+    tab.style.marginBottom = '0.25rem';
+    tab.style.paddingLeft = `${0.5 + level * 1.25}rem`;
+
+/* # for orange color */
+        
+    // dot coloring before an entry
+    const loreColors = { /* expanded: '#2196f3', vanilla: '#4caf50', legends: '#ff7800 ', */ default: '#fff' };
+    const marker = document.createElement('span');
+    marker.className = 'inline-block w-2.5 h-2.5 rounded-full mr-3 align-middle';
+    marker.style.backgroundColor = loreColors[entry.loreType] || loreColors.default;
+    
+    const leftContent = document.createElement('span');
+    leftContent.className = 'flex items-center';
+    leftContent.appendChild(marker);
+
+    const titleSpan = document.createElement('span');
+    titleSpan.textContent = entry.title;
+    titleSpan.className = 'align-middle';
+    leftContent.appendChild(titleSpan);
+
+    tab.appendChild(leftContent);
+
+    // --- Status Tag ---
+    const statusColors = {
+            remove: 'bg-red-800/50 text-black',
+            proposed: 'bg-neutral-100/50 text-black',
+            suggested: 'bg-blue-800/80 text-white',
+            WIP: 'bg-orange-200/50 text-white',
+            wip: 'bg-orange-200/50 text-white',
+            confirmed: 'bg-green-600/50 text-white',
+            added: 'bg-green-600/50 text-white',
+            Java: 'bg-green-600/10 text-white',
+            expanded: 'bg-neutral-800/10 text-white',
+            legends: 'bg-orange-600/10 text-white',
+            dungeons: 'bg-purple-600/10 text-white',
+            default: 'bg-neutral-600/50 text-white'
+
+    };
+    const statusText = entry.status || '';
+    const statusTag = document.createElement('span');
+    statusTag.textContent = statusText.toUpperCase();
+    statusTag.className = ` float-right ml-2 px-2 py-0.5 rounded text-xs font-bold ${statusColors[statusText] || statusColors.default}`;
+    tab.appendChild(statusTag);
+
+    /* // --- Source Tag ---
+    const sourceTag = document.createElement('span');
+    sourceTag.textContent = entry.source ? entry.source : '';
+    sourceTag.className = 'float-rightml-2 px-2 py-0.5 rounded text-xs font-semibold bg-sky-700/40 text-sky-100';
+    tab.appendChild(sourceTag);
+
+    // --- Type Tag ---
+    const typeTag = document.createElement('span');
+    typeTag.textContent = entry.type ? entry.type.toUpperCase() : '';
+    typeTag.className = 'float-right ml-2 px-2 py-0.5 rounded text-xs font-semibold bg-neutral-700/40 text-neutral-100';
+    tab.appendChild(typeTag); */
+
+    tab.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (activeTabElement) {
+            activeTabElement.classList.remove('active');
+        }
+        tab.classList.add('active');
+        activeTabElement = tab;
+        displayContent(entry);
+    });
+
+    return tab;
+}
+
+    /**
+     * Recursively renders all entries and their children as tabs.
+     * @param {Array} entries - The array of entry objects.
+     * @param {HTMLElement} container - The parent element.
+     * @param {number} level - The current indentation level.
+     */
+    function renderEntries(entries, container, level) {
+        entries.forEach(entry => {
+            const tab = createTab(entry, level);
+            container.appendChild(tab);
+            if (entry.children && entry.children.length > 0) {
+                renderEntries(entry.children, container, level + 1);
+            }
+        });
+    }
+
+    /**
+     * ✨ FIXED: Recursively reverses an array of entries and their children.
+     * This creates new arrays and objects to avoid changing the original data.
+     * @param {Array} entries - The array of entries to reverse.
+     * @returns {Array} A new, deeply reversed array.
+     */
+    function recursivelyReverseEntries(entries) {
+        // 1. Reverse the current array of entries
+        const reversedEntries = [...entries].reverse();
+
+        // 2. For each entry, if it has children, recursively reverse them too
+        return reversedEntries.map(entry => {
+            if (entry.children && entry.children.length > 0) {
+                // Return a new entry object with reversed children
+                return { ...entry, children: recursivelyReverseEntries(entry.children) };
+            }
+            return entry; // No children, return as is
+        });
+    }
+
+    /**
+     * Renders the entire timeline based on the provided data.
+     * @param {Array} dataToRender - The array of era objects to display.
+     */
+    function renderTimeline(dataToRender) {
+        tabsNav.innerHTML = ""; // Clear existing timeline
+
+        dataToRender.forEach((eraObj, index) => {
+            const eraGroup = document.createElement("div");
+            eraGroup.className = "era-group mb-6";
+            eraGroup.style.animation = `fadeIn 0.6s ease-out ${index * 0.1}s forwards`;
+            eraGroup.style.opacity = 0;
+
+            if (eraObj.era.trim()) { // Don't render a title for empty era strings
+                eraGroup.innerHTML = `<div class="era-title cinzel text-xl text-sky-400/90 mb-3 ml-6 font-semibold">${eraObj.era}</div>`;
+            }
+
+            // Render the entries for this era
+            renderEntries(eraObj.entries, eraGroup, 0);
+            tabsNav.appendChild(eraGroup);
+        });
+
+        // Automatically select the first available tab
+        const firstTab = tabsNav.querySelector('.tab');
+        if (firstTab) {
+            firstTab.click();
+        } else {
+             // If no tabs, clear the content area
+            tabContent.innerHTML = '<div class="p-4 rounded-lg bg-neutral-800/50"><h3 class="cinzel text-xl text-sky-400 mb-2 font-semibold">Welcome!</h3><p class="text-gray-400">Select an entry from the left to see its description here.</p></div>';
+        }
+    }
+
+    // --- Main script execution ---
+
+    // Button click handler
+    toggleOrderBtn.onclick = () => {
+        isReversed = !isReversed;
+        toggleOrderBtn.textContent = isReversed ?  "Reverse Order ☜(ﾟヮﾟ☜)": "Chronological Order (☞ﾟヮﾟ)☞";
+        
+        let processedEras;
+
+        if (isReversed) {
+            // Create a deeply reversed version of the data
+            processedEras = [...loreEras].reverse().map(era => ({
+                ...era,
+                entries: recursivelyReverseEntries(era.entries)
+            }));
+        } else {
+            // Use the original data for chronological order
+            processedEras = loreEras;
+        }
+
+        renderTimeline(processedEras);
+    };
+
+    // Initial render on page load
+    renderTimeline(loreEras);
+</script>
+
+</body>
+</html>
